@@ -1,7 +1,9 @@
-from django.urls import path
-from .views import TodoGetCreate,TodoUpdateDellet
+from django.urls import path, include
+from django.conf.urls import url
+from .views import (
+    TodoListApiView,
+)
 
 urlpatterns = [
-    path('',TodoGetCreate.as_view()),
-    path('<int:pk>',TodoUpdateDellet._as_view)
+    path('api', TodoListApiView.as_view()),
 ]

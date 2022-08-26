@@ -1,3 +1,4 @@
+from pickle import TRUE
 from pyexpat import model
 from turtle import title
 from django.db import models
@@ -6,7 +7,7 @@ from django.db import models
 class Todo(models.Model):
     title = models.CharField(max_length=50)
     desc = models.CharField(max_length=200)
-    isDone =models.BooleanField(default=False)
+    isDone =models.BooleanField(default=False,blank=True)
     date= models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
